@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Qual é o seu nome {% endblock %}
+
+{% block content %}
+<div class="offset-1 col-10 list-div">
+    <h1>Adiciona a sua tarefa</h1>
+    <form method="POST">
+
+        {{form.as_p}}
+
+    </form>
+</div>
+{% endblock %}

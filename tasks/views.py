@@ -5,7 +5,7 @@ from .forms import TaskForm
 # Create your views here.
 
 def taskList(request):
-    tasks = Task.objects.all()
+    tasks = Task.objects.all().order_by('-created_at')
     return render(request, 'tasks/list.html', {'tasks': tasks})
 
 
@@ -15,8 +15,11 @@ def taskview(request, id):
 
 
 def newtask(request):
-    form = TaskForm()
-    return render(request, 'tasks/newtask.html', {'form': form})
+    if request.method == 'POST':
+        pass
+    else:
+        form = TaskForm()
+        return render(request, 'tasks/newtask.html', {'form': form})
 
 
 

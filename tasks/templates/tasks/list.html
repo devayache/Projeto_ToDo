@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Qual é o seu nome {% endblock %}
+{% block title %}Lista de tarefas {% endblock %}
 
 {% block content %}
 <div class="offset-1 col-10 list-div">
@@ -19,7 +19,7 @@
         <li class="task-item">
             <span><a href="task/{{task.id}}">{{task.title}}</a></span>
             <span><i class="fas fa-trash"></i></span>
-            <span><i class="fas fa-edit"></i></span>
+            <a href="edit/{{task.id}}"><span><i class="fas fa-edit"></i></span></a>
         </li>
     {% endfor %}    
     </ul>
